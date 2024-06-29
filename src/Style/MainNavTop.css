@@ -1,0 +1,162 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 25px;
+}
+/* ********************************************************* */
+/* Navbar Container */
+/* ********************************************************* */
+.nav-Container {
+	/* border: 2px solid blue; */
+	width: 1284px;
+	display: flex;
+	align-self: center;
+	/* to center itself horizontally */
+	justify-content: space-between;
+	/* margin: 24px 0 24px 0; */
+}
+/* ********************************************************* */
+/* Unordered List Box */
+/* ********************************************************* */
+ul {
+	border: 1px solid rgba(238, 238, 236, 1);
+	/* border: 1px solid blue; */
+	width: 629.48px;
+	height: 50px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	/* padding: 4px; */
+}
+
+.navbar1-Item {
+	/* border: 1px solid red; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: rgba(0, 0, 0, 0.6);
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 24px;
+	text-align: center;
+	width: 122px;
+	transition: 120ms;
+}
+
+.newsIcon {
+	width: 18px;
+	height: 18px;
+}
+
+.tvShowIcon,
+.liveIcon {
+	width: 16px;
+	height: 14px;
+}
+
+.podcastIcon {
+	width: 13.76px;
+	height: 15.29px;
+}
+
+.blinkIcon {
+	width: 16px;
+	height: 16px;
+}
+
+.icon {
+	margin-right: 10px;
+	transition: 120ms;
+}
+
+.icon:hover {
+	filter: hue-rotate(150deg);
+}
+
+.navbar1-Item:hover {
+	height: 37px;
+	background: rgba(0, 0, 0, 0.05);
+	color: rgba(0, 0, 0, 1);
+}
+
+.navbar1-Item:hover .icon {
+	filter: brightness(0%); /* Darken the image when the link/<a> is hovered over */
+}
+/* ********************************************************* */
+/* LogoAndLanguageBtnContainer*/
+/* ********************************************************* */
+.LogoAndLanguageBtnContainer {
+	/* border: 1px solid blue; */
+	display: flex;
+	gap: 25px;
+}
+
+.languageDropdawnBTN {
+	border: 1px solid rgba(238, 238, 236, 1);
+	background: var(--offWhite);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 130px;
+	height: 50px;
+	padding: 0px 23.64px 0px 17px;
+	font-family: inter;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.languageBTNicon {
+	margin-left: 21.55px;
+	width: 15px;
+	height: 10px;
+	filter: brightness(120%);
+}
+.redLogoBox {
+	background: var(--vibrantRed);
+	width: 50px;
+	height: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 3px;
+}
+
+.ch8Logo {
+	width: 50px;
+	height: 50px;
+}
+
+/* ********************************************************* */
+/* magnifyAndSignBtnContainer*/
+/* ********************************************************* */
+.magnifyAndSignBtnContainer {
+	/* border: 1px solid blue; */
+	display: flex;
+	gap: 25px;
+}
+.magnifyBox {
+	border: 1px dashed blue;
+	border: 1px solid rgba(238, 238, 236, 1);
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.magnifyIcon {
+	width: 16px;
+	height: 16px;
+}
+.signInBTNBox {
+	background: rgba(224, 25, 41, 1);
+	width: 130px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: rgba(255, 255, 255, 1);
+	font-family: inter;
+	font-size: 20px;
+	font-weight: 600px;
+}

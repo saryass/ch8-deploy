@@ -1,0 +1,31 @@
+.list-container {
+	/* background-color: greenyellow; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-top: 1px solid rgba(238, 238, 236, 1);
+	border-bottom: 1px solid rgba(238, 238, 236, 1);
+	height: 50px;
+}
+/* ********************************************************* */
+/* Unordered List Box */
+/* ********************************************************* */
+.unorderList {
+	/* border: 2px solid blue; */
+	width: 1284px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.listItem {
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24.2px;
+	text-align: left;
+	color: rgba(0, 0, 0, 1);
+	transition: 110ms;
+}
+.listItem:hover {
+	border-bottom: 3px solid rgba(224, 25, 41, 1);
+}
