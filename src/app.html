@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		%sveltekit.head%
-	</head>
-	<body>
-		<div>%sveltekit.body%</div>
-	</body>
+<html lang="en"> <!-- Specifies the primary language of the document, important for accessibility and SEO -->
+<head>
+    <meta charset="utf-8" /> <!-- Defines the character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper scaling on mobile devices for responsive design -->
+    <meta name="description" content="Default site description"> <!-- Provides a default meta description, which can be overridden by page-specific descriptions -->
+
+    <!-- Favicon Links -->
+    <link rel="icon" href="%sveltekit.assets%/favicon.png" /> <!-- Links to the site's favicon -->
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Default Site Title"> <!-- Default title for social media shares -->
+    <meta property="og:description" content="Default site description"> <!-- Default description for social media shares -->
+    <meta property="og:image" content="/default-og-image.jpg"> <!-- Default image for social media shares -->
+    <meta property="og:url" content="https://ch8-deployment-hra4za8dj-saryass-projects.vercel.app/"> <!-- URL of the site -->
+    <meta property="og:type" content="website"> <!-- Type of content, indicating this is a website -->
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image"> <!-- Specifies the type of Twitter card to use -->
+    <meta name="twitter:title" content="Default Site Title"> <!-- Default title for Twitter shares -->
+    <meta name="twitter:description" content="Default site description"> <!-- Default description for Twitter shares -->
+    <meta name="twitter:image" content="/default-twitter-image.jpg"> <!-- Default image for Twitter shares -->
+
+    <!-- Additional Icons for Various Devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> <!-- Icon for Apple devices -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"> <!-- 32x32 icon for general use -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> <!-- 16x16 icon for general use -->
+    <link rel="manifest" href="/site.webmanifest"> <!-- Link to the web app manifest for progressive web apps -->
+
+    <title>Default Site Title</title> <!-- Provides a default title, which can be overridden by page-specific titles -->
+
+    %sveltekit.head% <!-- Placeholder for SvelteKit to inject head elements specific to each page -->
+</head>
+<body>
+    <div>%sveltekit.body%</div> <!-- Placeholder for SvelteKit to inject the body content of your app -->
+</body>
 </html>

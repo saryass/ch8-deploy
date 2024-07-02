@@ -5,6 +5,12 @@
 	export let data;
 </script>
 
+
+<svelte:head>
+	<title>{data.title}</title> <!-- SEO: Set the page title dynamically based on the data passed from the load function -->
+	<meta name="description" content={data.description} /> <!-- SEO: Set the meta description dynamically based on the data passed from the load function -->
+</svelte:head>
+
 <!-- Heading for the page -->
 <h1>Business News Page</h1>
 

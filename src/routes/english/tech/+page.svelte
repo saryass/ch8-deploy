@@ -5,6 +5,11 @@
 	export let data;
 </script>
 
+<svelte:head>
+    <title>{data.title}</title>
+    <meta name="description" content={data.description} />
+</svelte:head>
+
 <!-- Heading for the page -->
 <h1>Science & Tech News Page</h1>
 

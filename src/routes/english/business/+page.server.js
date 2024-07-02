@@ -1,8 +1,5 @@
-// Import the Firestore database instance
 import { db } from '../../../firebase';
-// Import Firestore functions to interact with the database
 import { collection, query, where, limit, getDocs } from 'firebase/firestore';
-
 
 	// *******************************************************************************************
        // Function to convert Firestore data to plain JavaScript objects safely (Serialization)
@@ -45,9 +42,11 @@ export async function load() {
 		const querySnapshot = await getDocs(q);  // Execute the query and get the snapshot of results
 		const zanyar = querySnapshot.docs.map((doc) => serializeFirestoreData(doc.data())); // Map through each document in the snapshot and serialize the data
 
-		// Return the serialized data to be used in the Svelte component
+		// Return the serialized data along with SEO-specific data
 		console.log(zanyar)
-		return {  
+		return {
+			title: 'Business News - Channel8', // SEO: Title for the Business news page
+			description: 'Latest business news covering various industries and market trends.', // SEO: Description for the Business news page
 			zanyar
 		};
 
@@ -55,7 +54,9 @@ export async function load() {
 		console.error('Error fetching data:', error);
 		return {
 			zanyar: [],
-			error: 'Failed to load data'
+			error: 'Failed to load data',
+			title: 'Error - Channel8',
+			description: 'An error occurred while fetching the business news.'
 		};
 	}
 }

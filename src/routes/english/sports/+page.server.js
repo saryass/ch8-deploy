@@ -47,14 +47,18 @@ export async function load() {
 		// Return the serialized data to be used in the Svelte component
 		console.log(zanyar)
 		return {  
-			zanyar
+			zanyar,
+			title: "Latest Sports News | Ch8 News",
+            description: "Stay updated with the latest sports news on Ch8 News. Get the most recent articles and insights on sports events and issues."
 		};
 
 	} catch (error) {
 		console.error('Error fetching data:', error);
 		return {
 			zanyar: [],
-			error: 'Failed to load data'
+			error: 'Failed to load data',
+			title: "Error - Ch8 News",
+            description: "An error occurred while fetching the sports news data on Ch8 News."
 		};
 	}
 }

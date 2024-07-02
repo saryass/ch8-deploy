@@ -93,7 +93,9 @@ export async function load({ params }) {
 
         return {
             singleNews, // Return the clicked news data
-            relatedNews // Return the related news data
+            relatedNews, // Return the related news data
+            title: `${singleNews.title} - Channel8`, // SEO: Title for the news article page
+            description: `${singleNews.title} published on ${singleNews.published_at} in ${singleNews.category.join(', ')} category.`, // SEO: Description for the news article page
         };
     } catch (error) {
         console.error("Firestore Error:", error.message); // Log the Firestore error

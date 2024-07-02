@@ -2,6 +2,12 @@
     export let data; // Declare a prop named 'data' to hold the data passed from the server-side load function
 </script>
 
+<svelte:head>
+    <title>{data.title}</title> <!-- SEO: Set the page title dynamically based on the data passed from the load function -->
+    <meta name="description" content={data.description} /> <!--SEO: Set the meta description dynamically based on the data passed from the load function -->
+</svelte:head>
+
+
 {#if data.error}
     <h1>Error: {data.error.message}</h1> <!-- Display an error message if there is an error in the data -->
 {:else}
