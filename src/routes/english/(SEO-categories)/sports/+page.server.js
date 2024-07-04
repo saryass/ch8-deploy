@@ -1,6 +1,5 @@
-// Import the Firestore database instance
-import { db } from '../../../firebase';
-// Import Firestore functions to interact with the database
+
+import { db } from '../../../../firebase';
 import { collection, query, where, limit, getDocs } from 'firebase/firestore';
 
 
@@ -31,14 +30,14 @@ function serializeFirestoreData(data) {
 }
 
 // ***************************************************************************
-// Load function to fetch data for the Culture page
+// Load function to fetch data for the Sports page
 // ***************************************************************************
 export async function load() {
 	try {
-		// Define a Firestore query to fetch documents from 'NewsEn' collection where 'category' contains 'Culture', limiting the results to 50
+		// Define a Firestore query to fetch documents from 'NewsEn' collection where 'category' contains 'Sports', limiting the results to 50
 		const q = query(
 			collection(db, 'NewsEn'),
-			where('category', 'array-contains', 'Culture'),
+			where('category', 'array-contains', 'Sports'),
 			limit(2)
 		);
 		
@@ -48,31 +47,25 @@ export async function load() {
 		// Return the serialized data to be used in the Svelte component
 		console.log(zanyar)
 		return {  
-			zanyar,
-			title: "Latest Culture News | Ch8 News",
-			description: "Stay updated with the latest culture news on Ch8 News. Get the most recent articles and insights on cultural events and trends."	
+			zanyar
 		};
 
 	} catch (error) {
 		console.error('Error fetching data:', error);
 		return {
 			zanyar: [],
-			error: 'Failed to load data',
-			title: "Error - Ch8 News",
-			description: "An error occurred while fetching the culture news data on Ch8 News."
+			error: 'Failed to load data'
 		};
 	}
 }
-
-
 
 
 // <!-- General Tasks -->
 // <!--
 // 1. Imports the Firestore database instance and necessary Firestore functions.
 // 2. Defines a function `serializeFirestoreData` to safely convert Firestore data to plain JavaScript objects.
-// 3. Defines an asynchronous `load` function to fetch data for the Culture page.
-// 4. Constructs a Firestore query to fetch documents from the 'NewsEn' collection with 'Culture' category, limiting to 50 documents.
+// 3. Defines an asynchronous `load` function to fetch data for the Sports page.
+// 4. Constructs a Firestore query to fetch documents from the 'NewsEn' collection with 'Sports' category, limiting to 50 documents.
 // 5. Executes the query and processes the results.
 // 6. Serializes the fetched data to ensure it's safe to use in the Svelte component.
 // 7. Returns the serialized data for use in the corresponding Svelte component.

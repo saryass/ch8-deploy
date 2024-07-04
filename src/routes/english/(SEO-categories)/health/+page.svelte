@@ -5,42 +5,40 @@
 	export let data;
 </script>
 
-
 <svelte:head>
-    <title>{data.title}</title>
-    <meta name="description" content={data.description} />
+	<title>Health - CHANNEL8</title>
 </svelte:head>
 
 <!-- Heading for the page -->
-<h1>Sports News Page</h1>
+<h1>Health News Page</h1>
 
-<!-- Check if there are any politic News in the data -->
+<!-- Check if there are any helth News in the data -->
 {#if data.zanyar.length > 0}
 	<!-- Loop through each politic news in the data and display its details -->
 	<div class="eachblock">
-		{#each data.zanyar as sportNews}
+		{#each data.zanyar as healthNews}
 			<!-- Display the politic news title -->
-			<h2>{sportNews.title}</h2>
+			<h2>{healthNews.title}</h2>
 			<!-- Container for the politic news thumbnail -->
 			<div>
 				<!-- Link to the politic news's detail page with prefetching enabled -->
-				<a href={`/english/${sportNews.wp_post_id}`} data-sveltekit-preload-data data-sveltekit-prefetch>
+				<a href={`/english/${healthNews.wp_post_id}`} data-sveltekit-preload-data data-sveltekit-prefetch>
 					<!-- Display the politic news's thumbnail image with specified dimensions -->
 					<img
-						src={sportNews.thumbnailURL}
-						alt={sportNews.title}
+						src={healthNews.thumbnailURL}
+						alt={healthNews.title}
 						width="300px"
 						height="200px"
 					/>
 				</a>
 			</div>
 			<!-- Display the politic news's publication date -->
-			<p>Published on: {sportNews.published_at}</p>
+			<p>Published on: {healthNews.published_at}</p>
 		{/each}
 	</div>
 {:else}
 	<!-- Display a message if no politic News are found -->
-	<p>No Sports news found.</p>
+	<p>No politic news found.</p>
 {/if}
 
 <!-- General Tasks -->

@@ -1,31 +1,19 @@
-<!-- SEO: This sets layout-specific defaults and allows pages to override them dynamically. -->
 <script>
-    import MainNavTop from "../components/MainNav/MainNavTop.svelte";
-    import MainNavBtm from "../components/MainNav/MainNavBtm.svelte";
-    import { page } from '$app/stores';
+	import MainNavTop from '../components/MainNav/MainNavTop.svelte';
+	import MainNavBtm from '../components/MainNav/MainNavBtm.svelte';
 
-    // Set default values for title and description
-    export let title = "Default Layout Title";
-    export let description = "Default layout description";
-
-    // Override with page-specific data if available
-    $: title = $page.data?.title || title;
-    $: description = $page.data?.description || description;
-
-    import '../app.css';
+	import '../app.css';
 </script>
 
 <svelte:head>
-    <title>{title}</title>
-    <meta name="description" content={description} />
+	<title>CHANNEL8 - You Deserve the Truth</title>
 </svelte:head>
 
 <div class="appNavbar">
-    <MainNavTop />
-    <MainNavBtm />
+	<MainNavTop />
+	<MainNavBtm />
 </div>
 <slot />
-
 
 <style>
 	.appNavbar {

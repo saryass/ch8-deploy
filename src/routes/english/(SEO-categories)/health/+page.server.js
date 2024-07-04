@@ -1,5 +1,5 @@
 // Import the Firestore database instance
-import { db } from '../../../firebase';
+import { db } from '../../../../firebase';
 // Import Firestore functions to interact with the database
 import { collection, query, where, limit, getDocs } from 'firebase/firestore';
 
@@ -31,14 +31,14 @@ function serializeFirestoreData(data) {
 }
 
 // ***************************************************************************
-// Load function to fetch data for the in Photo page
+// Load function to fetch data for the Health page
 // ***************************************************************************
 export async function load() {
 	try {
-		// Define a Firestore query to fetch documents from 'NewsEn' collection where 'category' contains 'in Photo', limiting the results to 50
+		// Define a Firestore query to fetch documents from 'NewsEn' collection where 'category' contains 'Health', limiting the results to 50
 		const q = query(
 			collection(db, 'NewsEn'),
-			where('category', 'array-contains', 'in Photo'),
+			where('category', 'array-contains', 'Health'),
 			limit(2)
 		);
 		
@@ -48,31 +48,24 @@ export async function load() {
 		// Return the serialized data to be used in the Svelte component
 		console.log(zanyar)
 		return {  
-			zanyar,
-			title: "Latest In-Photo News | Ch8 News",
-			description: "Stay updated with the latest in-photo news on Ch8 News. Get the most recent articles and insights on photography and visual storytelling."
+			zanyar
 		};
 
 	} catch (error) {
 		console.error('Error fetching data:', error);
 		return {
-			zanyar: [],
-			error: 'Failed to load data',
-			title: "Error - Ch8 News",
-			description: "An error occurred while fetching the in-photo news data on Ch8 News."
+			zanyar: []
 		};
 	}
 }
-
-
 
 
 // <!-- General Tasks -->
 // <!--
 // 1. Imports the Firestore database instance and necessary Firestore functions.
 // 2. Defines a function `serializeFirestoreData` to safely convert Firestore data to plain JavaScript objects.
-// 3. Defines an asynchronous `load` function to fetch data for the in Photo page.
-// 4. Constructs a Firestore query to fetch documents from the 'NewsEn' collection with 'in Photo' category, limiting to 50 documents.
+// 3. Defines an asynchronous `load` function to fetch data for the Health page.
+// 4. Constructs a Firestore query to fetch documents from the 'NewsEn' collection with 'Health' category, limiting to 50 documents.
 // 5. Executes the query and processes the results.
 // 6. Serializes the fetched data to ensure it's safe to use in the Svelte component.
 // 7. Returns the serialized data for use in the corresponding Svelte component.

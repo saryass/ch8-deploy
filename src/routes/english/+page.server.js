@@ -46,9 +46,7 @@ export async function load() {
 			politicsNews,
 			businessNews,
 			healthNews,
-			sportsNews,
-			title: "English News - Politics, Business, Health, Sports | Channel8 News",   // SEO: Title for the English news page
-            description: "Stay updated with the latest news in Politics, Business, Health, and Sports on channel8 News. Get the most recent articles and insights." // SEO: Description for the English news page
+			sportsNews
 		};
 	} catch (error) { // Catch any errors during data fetching
 		console.error('Error fetching data:', error); // Log the error
@@ -58,8 +56,6 @@ export async function load() {
 			healthNews: [],
 			sportsNews: [],
 			error: 'Failed to load data', // Return an error message
-			title: "Error - channel8 News", // Error title
-            description: "An error occurred while fetching the news data." // Error description
 		};
 	}
 }

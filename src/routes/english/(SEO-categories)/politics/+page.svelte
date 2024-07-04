@@ -6,35 +6,34 @@
 </script>
 
 <svelte:head>
-    <title>{data.title}</title>
-    <meta name="description" content={data.description} />
+	<title>Politics - CHANNEL8</title>
 </svelte:head>
 
 <!-- Heading for the page -->
-<h1>Science & Tech News Page</h1>
+<h1>Politics News Page</h1>
 
 <!-- Check if there are any politic News in the data -->
 {#if data.zanyar.length > 0}
 	<!-- Loop through each politic news in the data and display its details -->
 	<div class="eachblock">
-		{#each data.zanyar as scienceTechNews}
+		{#each data.zanyar as politicNews}
 			<!-- Display the politic news title -->
-			<h2>{scienceTechNews.title}</h2>
+			<h2>{politicNews.title}</h2>
 			<!-- Container for the politic news thumbnail -->
 			<div>
 				<!-- Link to the politic news's detail page with prefetching enabled -->
-				<a href={`/english/${scienceTechNews.wp_post_id}`} data-sveltekit-preload-data data-sveltekit-prefetch>
+				<a href={`/english/${politicNews.wp_post_id}`} data-sveltekit-preload-data data-sveltekit-prefetch>
 					<!-- Display the politic news's thumbnail image with specified dimensions -->
 					<img
-						src={scienceTechNews.thumbnailURL}
-						alt={scienceTechNews.title}
+						src={politicNews.thumbnailURL}
+						alt={politicNews.title}
 						width="300px"
 						height="200px"
 					/>
 				</a>
 			</div>
 			<!-- Display the politic news's publication date -->
-			<p>Published on: {scienceTechNews.published_at}</p>
+			<p>Published on: {politicNews.published_at}</p>
 		{/each}
 	</div>
 {:else}
@@ -60,7 +59,6 @@
 	}
 
 	.eachblock {
-		/* border: 2px solid red; */
 		padding: 25px
 	}
 </style>

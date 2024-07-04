@@ -3,10 +3,40 @@
 </script>
 
 <svelte:head>
-    <title>{data.title}</title> <!-- SEO: Set the page title dynamically based on the data passed from the load function -->
-    <meta name="description" content={data.description} /> <!--SEO: Set the meta description dynamically based on the data passed from the load function -->
-</svelte:head>
+    <title>{data.singleNews.title}</title>
+	<meta property="og:title" content="{data.singleNews.title}" />
+	<meta
+		property="og:url"
+		content={`https://ch8-deployment-1ndau2img-saryass-projects.vercel.app/english/${data.singleNews.wp_post_id}`}
+	/>
+	<meta property="og:type" content="article" />
+	<meta property="og:description" content="" />
+	<meta
+		property="og:image"
+		content="{data.singleNews.thumbnailURL}"
+	/>
+	<meta property="og:locale" content="en_US" />
 
+
+
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="{data.singleNews.title}" />
+	<meta
+		name="twitter:description"
+		content=""
+	/>
+	<meta
+		name="twitter:url"
+		content={`https://ch8-deployment-1ndau2img-saryass-projects.vercel.app/english/${data.singleNews.wp_post_id}`}
+	/>
+	<meta
+		name="twitter:image"
+		content="{data.singleNews.thumbnailURL}"
+	/>
+
+
+</svelte:head>
 
 {#if data.error}
     <h1>Error: {data.error.message}</h1> <!-- Display an error message if there is an error in the data -->

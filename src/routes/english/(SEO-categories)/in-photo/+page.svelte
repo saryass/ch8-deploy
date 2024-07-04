@@ -6,35 +6,33 @@
 </script>
 
 <svelte:head>
-    <title>{data.title}</title>
-    <meta name="description" content={data.description} />
+	<title>in Photo - CHANNEL8</title>
 </svelte:head>
 
 <!-- Heading for the page -->
-<h1>Evnironment News Page</h1>
+<h1>In-Phpto News Page</h1>
 
 <!-- Check if there are any politic News in the data -->
 {#if data.zanyar.length > 0}
 	<!-- Loop through each politic news in the data and display its details -->
 	<div class="eachblock">
-		{#each data.zanyar as environmentNews}
+		{#each data.zanyar as inPhotoNews}
 			<!-- Display the politic news title -->
-			<h2>{environmentNews.title}</h2>
+			<h2>{inPhotoNews.title}</h2>
 			<!-- Container for the politic news thumbnail -->
 			<div>
 				<!-- Link to the politic news's detail page with prefetching enabled -->
-				<a href={`/english/${environmentNews.wp_post_id}`} data-sveltekit-preload-data data-sveltekit-prefetch>
+				<a href={`/english/${inPhotoNews.wp_post_id}`} data-sveltekit-preload-data data-sveltekit-prefetch>
 					<!-- Display the politic news's thumbnail image with specified dimensions -->
 					<img
-						src={environmentNews.thumbnailURL}
-						alt={environmentNews.title}
-						width="300px"
-						height="200px"
+                        class="inPhotoIMG"
+						src={inPhotoNews.thumbnailURL}
+						alt={inPhotoNews.title}
 					/>
 				</a>
 			</div>
 			<!-- Display the politic news's publication date -->
-			<p>Published on: {environmentNews.published_at}</p>
+			<p>Published on: {inPhotoNews.published_at}</p>
 		{/each}
 	</div>
 {:else}
@@ -62,4 +60,9 @@
 	.eachblock {
 		padding: 25px
 	}
+
+    .inPhotoIMG {
+        width: 95%;
+        height: 90%;
+    }
 </style>

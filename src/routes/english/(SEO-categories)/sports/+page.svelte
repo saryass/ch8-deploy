@@ -5,41 +5,40 @@
 	export let data;
 </script>
 
-
 <svelte:head>
-    <title>{data.title}</title>
-    <meta name="description" content={data.description} />
+	<title>Sports - CHANNEL8</title>
 </svelte:head>
 
 <!-- Heading for the page -->
-<h1>In-Phpto News Page</h1>
+<h1>Sports News Page</h1>
 
 <!-- Check if there are any politic News in the data -->
 {#if data.zanyar.length > 0}
 	<!-- Loop through each politic news in the data and display its details -->
 	<div class="eachblock">
-		{#each data.zanyar as inPhotoNews}
+		{#each data.zanyar as sportNews}
 			<!-- Display the politic news title -->
-			<h2>{inPhotoNews.title}</h2>
+			<h2>{sportNews.title}</h2>
 			<!-- Container for the politic news thumbnail -->
 			<div>
 				<!-- Link to the politic news's detail page with prefetching enabled -->
-				<a href={`/english/${inPhotoNews.wp_post_id}`} data-sveltekit-preload-data data-sveltekit-prefetch>
+				<a href={`/english/${sportNews.wp_post_id}`} data-sveltekit-preload-data data-sveltekit-prefetch>
 					<!-- Display the politic news's thumbnail image with specified dimensions -->
 					<img
-                        class="inPhotoIMG"
-						src={inPhotoNews.thumbnailURL}
-						alt={inPhotoNews.title}
+						src={sportNews.thumbnailURL}
+						alt={sportNews.title}
+						width="300px"
+						height="200px"
 					/>
 				</a>
 			</div>
 			<!-- Display the politic news's publication date -->
-			<p>Published on: {inPhotoNews.published_at}</p>
+			<p>Published on: {sportNews.published_at}</p>
 		{/each}
 	</div>
 {:else}
 	<!-- Display a message if no politic News are found -->
-	<p>No politic news found.</p>
+	<p>No Sports news found.</p>
 {/if}
 
 <!-- General Tasks -->
@@ -62,9 +61,4 @@
 	.eachblock {
 		padding: 25px
 	}
-
-    .inPhotoIMG {
-        width: 95%;
-        height: 90%;
-    }
 </style>

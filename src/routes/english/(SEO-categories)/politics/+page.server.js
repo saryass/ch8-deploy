@@ -1,5 +1,7 @@
-import { db } from '../../../firebase';
+
+import { db } from '../../../../firebase';
 import { collection, query, where, limit, getDocs } from 'firebase/firestore';
+
 
 	// *******************************************************************************************
        // Function to convert Firestore data to plain JavaScript objects safely (Serialization)
@@ -28,25 +30,23 @@ function serializeFirestoreData(data) {
 }
 
 // ***************************************************************************
-// Load function to fetch data for the Business page
+// Load function to fetch data for the Politics page
 // ***************************************************************************
 export async function load() {
 	try {
-		// Define a Firestore query to fetch documents from 'NewsEn' collection where 'category' contains 'Business', limiting the results to 50
+		// Define a Firestore query to fetch documents from 'NewsEn' collection where 'category' contains 'Politics', limiting the results to 50
 		const q = query(
 			collection(db, 'NewsEn'),
-			where('category', 'array-contains', 'Business'),
+			where('category', 'array-contains', 'Politics'),
 			limit(2)
 		);
 		
 		const querySnapshot = await getDocs(q);  // Execute the query and get the snapshot of results
 		const zanyar = querySnapshot.docs.map((doc) => serializeFirestoreData(doc.data())); // Map through each document in the snapshot and serialize the data
 
-		// Return the serialized data along with SEO-specific data
+		// Return the serialized data to be used in the Svelte component
 		console.log(zanyar)
-		return {
-			title: 'Business News - Channel8', // SEO: Title for the Business news page
-			description: 'Latest business news covering various industries and market trends.', // SEO: Description for the Business news page
+		return {  
 			zanyar
 		};
 
@@ -54,9 +54,7 @@ export async function load() {
 		console.error('Error fetching data:', error);
 		return {
 			zanyar: [],
-			error: 'Failed to load data',
-			title: 'Error - Channel8',
-			description: 'An error occurred while fetching the business news.'
+			error: 'Failed to load data'
 		};
 	}
 }
@@ -65,8 +63,8 @@ export async function load() {
 // <!--
 // 1. Imports the Firestore database instance and necessary Firestore functions.
 // 2. Defines a function `serializeFirestoreData` to safely convert Firestore data to plain JavaScript objects.
-// 3. Defines an asynchronous `load` function to fetch data for the Business page.
-// 4. Constructs a Firestore query to fetch documents from the 'NewsEn' collection with 'Business' category, limiting to 50 documents.
+// 3. Defines an asynchronous `load` function to fetch data for the Politics page.
+// 4. Constructs a Firestore query to fetch documents from the 'NewsEn' collection with 'Politics' category, limiting to 50 documents.
 // 5. Executes the query and processes the results.
 // 6. Serializes the fetched data to ensure it's safe to use in the Svelte component.
 // 7. Returns the serialized data for use in the corresponding Svelte component.
